@@ -12,7 +12,12 @@ let userSchema = mongoose.Schema({
     password: {
         type: String,
         minlenght: 6
-    }
+    },
+    blogs: [{
+        type: mongoose.Types.ObjectId,
+        ref: "Blog",
+        required: true
+    }]
 })
 
 

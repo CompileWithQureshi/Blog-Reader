@@ -12,7 +12,7 @@ const CreateUser = async (req, res, next) => {
         return res.status(400).json({ message: "User is already exits" })
     }
     const hashedpassword = bcrypt.hashSync(password)
-    let users = new User({ name, email, password: hashedpassword })
+    let users = new User({ name, email, password: hashedpassword, blog: [] })
     try {
         users = await users.save()
     } catch (error) {
